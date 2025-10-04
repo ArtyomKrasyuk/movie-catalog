@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/movies.css">
+    <title>BigCinema. Каталог фильмов</title>
+</head>
+<body>
+    <header>
+        <div class="header__container">
+            <div href="index.html" class="logo">
+                <img src="img/movie.png" alt="logo" class="logo__img">
+                <p class="logo__title"><a href="index.html">BigCinema</a></p>
+            </div>
+            <nav class="header__buttons">
+                <a href="movies.html" class="header__button">Фильмы</a>
+                <a href="#" class="header__button">Сериалы</a>
+                <a href="news_catalog.html" class="header__button">Новости</a>
+                <a href="about_us.html" class="header__button">О сайте</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="search_section">
+                <h1 class="search_section__title">Каталог фильмов</h1>
+                <div class="search_section__searchline">
+                    <img src="img/search.png" alt="search" class="searchline__img" />
+                    <input type="text" class="searchline__input" placeholder="Введите название фильма"/>
+                    <button class="searchline__btn">Найти</button>
+                </div>
+                <div class="search_section__params">
+                    <select name="years" id="years" class="params__select">
+                        <option value="">Все годы</option>
+                        <option value="2020">2020-е</option>
+                        <option value="2010">2010-е</option>
+                        <option value="2000">2000-е</option>
+                        <option value="1990">1990-е</option>
+                        <option value="1980">1980-е</option>
+                        <option value="1970">1970-е</option>
+                        <option value="1960">1960-е</option>
+                    </select>
+                    <select name="country" id="country" class="params__select">
+                        <option value="">Все страны</option>
+                        <option value="Россия">Россия</option>
+                        <option value="СССР">СССР</option>
+                        <option value="США">США</option>
+                        <option value="Франция">Франция</option>
+                        <option value="Великобритания">Великобритания</option>
+                    </select>
+                    <select name="genre" id="genre" class="params__select">
+                        <option value="">Все жанры</option>
+                        <option value="Боевик">Боевик</option>
+                        <option value="Драма">Драма</option>
+                        <option value="Комедия">Комедия</option>
+                        <option value="Триллер">Триллер</option>
+                        <option value="Криминал">Криминал</option>
+                        <option value="Ужасы">Ужасы</option>
+                        <option value="Приключения">Приключения</option>
+                        <option value="Фэнтези">Фэнтези</option>
+                        <option value="Фантастика">Фантастика</option>
+                        <option value="Документальный">Документальный</option>
+                        <option value="Исторический">Исторический</option>
+                        <option value="Спорт">Спорт</option>
+                        <option value="Детектив">Детектив</option>
+                        <option value="Музыкальный">Музыкальный</option>
+                    </select>
+                    <select name="rating" id="rating" class="params__select">
+                        <option value="">Без сортировки по рейтингу</option>
+                        <option value="ascending">По возрастанию рейтинга</option>
+                        <option value="descending">По убыванию рейтинга</option>
+                    </select>
+                    <select name="newness" id="newness" class="params__select">
+                        <option value="">Без сортировки по новизне</option>
+                        <option value="ascending">Сначала новые</option>
+                        <option value="descending">Сначала старые</option>
+                    </select>
+                </div>
+            </div>
+            <div class="movie_section">
+                <div class="movie_section__movies">
+                    <div class="movie_section__movie">
+                        <img src="img/movie_img.png" alt="Постер" class="movie__img"/>
+                        <div class="movie__description">
+                            <h2 class="movie__title"><a href="movie.html">Дюна: часть вторая</a></h2>
+                            <p class="movie__genres">Фантастика, Боевик, Драма, Приключения</p>
+                            <div class="movie__rating">
+                                <img src="img/star.png" alt="Рейтинг" class="rating__img" />
+                                <p class="rating__number">8.2</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie_section__movie">
+                        <img src="img/movie_img.png" alt="Постер" class="movie__img"/>
+                        <div class="movie__description">
+                            <h2 class="movie__title"><a href="movie.html">Дюна: часть вторая</a></h2>
+                            <p class="movie__genres">Фантастика, Боевик, Драма, Приключения</p>
+                            <div class="movie__rating">
+                                <img src="img/star.png" alt="Рейтинг" class="rating__img" />
+                                <p class="rating__number">8.2</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie_section__movie">
+                        <img src="img/movie_img.png" alt="Постер" class="movie__img"/>
+                        <div class="movie__description">
+                            <h2 class="movie__title"><a href="movie.html">Дюна: часть вторая</a></h2>
+                            <p class="movie__genres">Фантастика, Боевик, Драма, Приключения</p>
+                            <div class="movie__rating">
+                                <img src="img/star.png" alt="Рейтинг" class="rating__img" />
+                                <p class="rating__number">8.2</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie_section__movie">
+                        <img src="img/movie_img.png" alt="Постер" class="movie__img"/>
+                        <div class="movie__description">
+                            <h2 class="movie__title"><a href="movie.html">Дюна: часть вторая</a></h2>
+                            <p class="movie__genres">Фантастика, Боевик, Драма, Приключения</p>
+                            <div class="movie__rating">
+                                <img src="img/star.png" alt="Рейтинг" class="rating__img" />
+                                <p class="rating__number">8.2</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="movie_section__pages">
+                    <span class="pages__page disabled">&lt;</span>
+                    <span class="pages__page">&gt;</span>
+                    <span class="pages__page active">1</span>
+                    <span class="pages__page">2</span>
+                    <span class="pages__page">3</span>
+                    <span class="ellipsis">...</span>
+                    <span class="pages__page">10</span>
+                </p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p class="footer__text">Выполнил Красюк Артём Максимович 6403-020302D</p>
+    </footer>
+</body>
+</html>

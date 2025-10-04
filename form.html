@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/form.css">
+    <title>BigCinema. Добавить фильм</title>
+</head>
+<body>
+    <header>
+        <div class="header__container">
+            <div href="index.html" class="logo">
+                <img src="img/movie.png" alt="logo" class="logo__img" />
+                <p class="logo__title"><a href="index.html">BigCinema</a></p>
+            </div>
+            <nav class="header__buttons">
+                <a href="movies.html" class="header__button">Фильмы</a>
+                <a href="#" class="header__button">Сериалы</a>
+                <a href="news_catalog.html" class="header__button">Новости</a>
+                <a href="about_us.html" class="header__button">О сайте</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h1 class="title">Добавить фильм</h1>
+        <form action="#">
+            <div class="form__container">
+                <div class="container__element">
+                    <p class="form__label">Название фильма</p>
+                    <input type="text" class="form__input" placeholder="Введите название"/>
+                    <p class="form__label">Краткое описание</p>
+                    <textarea name="desc" id="desc" class="form__input" placeholder="Введите краткое описание"></textarea>
+                    <p class="form__label">Сюжет фильма</p>
+                    <textarea name="plot" id="plot" class="form__input" placeholder="Введите сюжет"></textarea>
+                </div>
+                <div class="container__element">
+                    <p class="form__label">Жанры</p>
+                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Боевик"/>Боевик</label>
+                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Драма"/>Драма</label>
+                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Комедия"/>Комедия</label>
+                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Триллер"/>Триллер</label>
+                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Криминал"/>Криминал</label>
+                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Ужасы</label>
+                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Приключения</label>
+                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Фэнтези</label>
+                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Фантастика</label>
+                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Документальный</label>
+                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Исторический</label>
+                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Спорт</label>
+                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Детектив</label>
+                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Музыкальный</label>
+                    <p class="form__label">Актёры</p>
+                    <input type="text" class="form__input" placeholder="Введите имя актёра"/>
+                    <p class="form__actors">
+                        <span class="actors__actor">Тимоти Шаламе</span>
+                        <span class="actors__actor">Зендея</span>
+                        <span class="actors__actor">Ребекка Фергюсон</span>
+                        <span class="actors__actor">Хавьер Бардем</span>
+                        <span class="actors__actor">Джош Бролин</span>
+                    </p>
+                    <p class="form__label">Страна выпуска</p>
+                    <select name="country" id="country" class="form__input">
+                        <option value="" selected disabled>Выберите страну</option>
+                        <option value="Россия">Россия</option>
+                        <option value="СССР">СССР</option>
+                        <option value="США">США</option>
+                        <option value="Франция">Франция</option>
+                        <option value="Великобритания">Великобритания</option>
+                    </select>
+                    <p class="form__label">Длительность</p>
+                    <input type="number" class="form__input number" placeholder="Минуты" min="1"/>
+                    <p class="form__label">Кинокомпания</p>
+                    <input type="text" class="form__input" placeholder="Введите кинокомпанию"/>
+                    <p class="form__label">Рейтинг</p>
+                    <input type="number" class="form__input number" placeholder="Рейтинг" min="1" max="10"/>
+                </div>
+            </div>
+            <button class="form__btn">Добавить фильм</button>
+        </form>
+    </main>
+    <footer>
+        <p class="footer__text">Выполнил Красюк Артём Максимович 6403-020302D</p>
+    </footer>
+</body>
+</html>
