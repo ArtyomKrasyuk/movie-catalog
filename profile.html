@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/movies.css">
+    <link rel="stylesheet" href="css/profile.css">
     <title>BigCinema. Каталог фильмов</title>
 </head>
 <body>
@@ -28,61 +28,60 @@
     </header>
     <main>
         <div class="container">
-            <div class="search_section">
-                <h1 class="search_section__title">Каталог фильмов</h1>
-                <div class="search_section__searchline">
-                    <img src="img/search.png" alt="search" class="searchline__img" />
-                    <input type="text" class="searchline__input" placeholder="Введите название фильма"/>
-                    <button class="searchline__btn">Найти</button>
-                </div>
-                <div class="search_section__params">
-                    <select name="years" id="years" class="params__select">
-                        <option value="">Все годы</option>
-                        <option value="2020">2020-е</option>
-                        <option value="2010">2010-е</option>
-                        <option value="2000">2000-е</option>
-                        <option value="1990">1990-е</option>
-                        <option value="1980">1980-е</option>
-                        <option value="1970">1970-е</option>
-                        <option value="1960">1960-е</option>
-                    </select>
-                    <select name="country" id="country" class="params__select">
-                        <option value="">Все страны</option>
-                        <option value="Россия">Россия</option>
-                        <option value="СССР">СССР</option>
-                        <option value="США">США</option>
-                        <option value="Франция">Франция</option>
-                        <option value="Великобритания">Великобритания</option>
-                    </select>
-                    <select name="genre" id="genre" class="params__select">
-                        <option value="">Все жанры</option>
-                        <option value="Боевик">Боевик</option>
-                        <option value="Драма">Драма</option>
-                        <option value="Комедия">Комедия</option>
-                        <option value="Триллер">Триллер</option>
-                        <option value="Криминал">Криминал</option>
-                        <option value="Ужасы">Ужасы</option>
-                        <option value="Приключения">Приключения</option>
-                        <option value="Фэнтези">Фэнтези</option>
-                        <option value="Фантастика">Фантастика</option>
-                        <option value="Документальный">Документальный</option>
-                        <option value="Исторический">Исторический</option>
-                        <option value="Спорт">Спорт</option>
-                        <option value="Детектив">Детектив</option>
-                        <option value="Музыкальный">Музыкальный</option>
-                    </select>
-                    <select name="rating" id="rating" class="params__select">
-                        <option value="">Без сортировки по рейтингу</option>
-                        <option value="ascending">По возрастанию рейтинга</option>
-                        <option value="descending">По убыванию рейтинга</option>
-                    </select>
-                    <select name="newness" id="newness" class="params__select">
-                        <option value="">Без сортировки по новизне</option>
-                        <option value="ascending">Сначала новые</option>
-                        <option value="descending">Сначала старые</option>
-                    </select>
-                </div>
+            <div class="information">
+                <h1 class="main__title">Личный кабинет</h1>
+                <p class="main__subtitle">Управление профилем и бронированиями</p>
             </div>
+            <div class="profile_card">
+                <div class="profile_card___title_container">
+                    <img src="img/profile.png" alt="Силуэт" />
+                    <h1 class="profile_card__title">Профиль пользователя</h1>
+                </div>
+                <p class="profile_card__subtitle">Просматривайте и редактируйте информацию профиля</p>
+                <div class="profile_card__information">
+                    <div class="profile_card__data_container">
+                        <img src="img/mini_profile.png" alt="Профиль" />
+                        <p class="profile_card__param">Имя:</p>
+                        <p class="profile_card__value">Артём</p>
+                    </div>
+                    <div class="profile_card__data_container">
+                        <img src="img/email.png" alt="Email" />
+                        <p class="profile_card__param">Email:</p>
+                        <p class="profile_card__value">artem@mail.com</p>
+                    </div>
+                    <button class="profile_card__btn">Редактировать профиль</button>
+                </div>
+                <form class="profile_card__changes hidden">
+                    <div class="changes__container">
+                        <div class="changes__input_container">
+                            <p class="input_container__title">Имя</p>
+                            <input type="text" class="input_container__input" value="Артём"/>
+                        </div>
+                        <div class="changes__input_container">
+                            <p class="input_container__title">Email</p>
+                            <input type="text" class="input_container__input" disabled value="artem@mail.com"/>
+                        </div>
+                    </div>
+                    <p class="changes__title">Изменить пароль</p>
+                    <div class="changes__container">
+                        <div class="changes__input_container">
+                            <p class="input_container__title">Текущий пароль</p>
+                            <input type="password" class="input_container__input" />
+                        </div>
+                        <div class="changes__input_container">
+                            <p class="input_container__title">Новый пароль</p>
+                            <input type="password" class="input_container__input" />
+                        </div>
+                        <div class="changes__input_container">
+                            <p class="input_container__title">Подтвердите пароль</p>
+                            <input type="password" class="input_container__input" />
+                        </div>
+                    </div>
+                    <button class="changes__submit">Сохранить изменения</button>
+                    <button class="changes__cancel">Отмена</button>
+                </form>
+            </div>
+            <p class="movies__title">Избранное</p>
             <div class="movie_section">
                 <div class="movie_section__movies">
                     <div class="movie_section__movie">
@@ -94,6 +93,7 @@
                                 <img src="img/star.png" alt="Рейтинг" class="rating__img" />
                                 <p class="rating__number">8.2</p>
                             </div>
+                            <button class="movie__btn">Убрать из избранного</button>
                         </div>
                     </div>
                     <div class="movie_section__movie">
@@ -105,6 +105,7 @@
                                 <img src="img/star.png" alt="Рейтинг" class="rating__img" />
                                 <p class="rating__number">8.2</p>
                             </div>
+                            <button class="movie__btn">Убрать из избранного</button>
                         </div>
                     </div>
                     <div class="movie_section__movie">
@@ -116,6 +117,7 @@
                                 <img src="img/star.png" alt="Рейтинг" class="rating__img" />
                                 <p class="rating__number">8.2</p>
                             </div>
+                            <button class="movie__btn">Убрать из избранного</button>
                         </div>
                     </div>
                     <div class="movie_section__movie">
@@ -127,6 +129,7 @@
                                 <img src="img/star.png" alt="Рейтинг" class="rating__img" />
                                 <p class="rating__number">8.2</p>
                             </div>
+                            <button class="movie__btn">Убрать из избранного</button>
                         </div>
                     </div>
                 </div>
@@ -145,5 +148,6 @@
     <footer>
         <p class="footer__text">Выполнил Красюк Артём Максимович 6403-020302D</p>
     </footer>
+    <script src="js/profile.js"></script>
 </body>
 </html>

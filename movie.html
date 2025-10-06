@@ -19,6 +19,10 @@
                 <a href="news_catalog.html" class="header__button">Новости</a>
                 <a href="about_us.html" class="header__button">О сайте</a>
             </nav>
+            <div class="header__registration">
+                <a href="sign_in.html" class="sign_in_btn">Войти</a>
+                <a href="sign_up.html" class="sign_up_btn">Регистрация</a>
+            </div>
         </div>
     </header>
     <main>
@@ -33,6 +37,7 @@
                         <p class="top_section__genre">Приключения</p>
                     </div>
                     <p class="top_section__text">Пол Атрейдес присоединяется к народу фрименов и становится их мессией. Продолжение эпичной саги Дени Вильнева.</p>
+                    <button class="top_section__btn">Добавить в избранное</button>
                 </div>
                 <img src="img/dune.jpg" alt="Постер Дюна: Вторая часть" class="top_section__img" />
             </div>
@@ -50,31 +55,39 @@
                 </ul>
             </div>
             <div class="description_section">
-                <h2 class="descriptuon__title">Сюжет фильма</h2>
+                <h2 class="descriptuon__title">Сюжет</h2>
                 <p class="description__text">Пол и его мать Джессика встречают в пустыне племя фрименов, которое не сразу, 
                     но все же принимает двух аристократов в свои ряды. Леди Джессика обретает новую силу, испив загадочной синей жидкости. 
                     Пол никак не может и не хочет принимать тот факт, что ему суждено повести народ фрименов к победе над Харконненами, 
                     а его новая возлюбленная Чани, хоть и верит в него, не желает преклоняться перед новым мессией. 
                     В конце концов Пол принимает свою судьбу и готовится к важной битве с теми, кто лишил его дома и семьи.
                 </p>
-                <div class="description__data">
-                    <p class="data__line">
-                        <span class="data__characteristic">Страна выпуска:</span>
-                        <span class="data__value">США</span>
-                    </p>
-                    <p class="data__line">
-                        <span class="data__characteristic">Длительность:</span>
-                        <span class="data__value">166 минут</span>
-                    </p>
-                    <p class="data__line">
-                        <span class="data__characteristic">Кинокомпания:</span>
-                        <span class="data__value">Legendary Pictures</span>
-                    </p>
-                    <p class="data__line">
-                        <span class="data__characteristic">Рейтинг:</span>
-                        <span class="data__value">8.2</span>
-                    </p>
-                </div>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th><span class="table__header">Характеристика</span></th>
+                            <th><span class="table__header">Значение</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="table__value">Страна выпуска</span></td>
+                            <td><span class="table__value">США</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="table__value">Длительность</span></td>
+                            <td><span class="table__value">166 минут</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="table__value">Кинокомпания</span></td>
+                            <td><span class="table__value">Legendary Pictures</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="table__value">Рейтинг</span></td>
+                            <td><span class="table__value">8.2</span></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>

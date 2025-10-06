@@ -30,13 +30,13 @@ header{
     margin: 0 auto;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .logo{
     display: flex;
     align-items: center;
     text-decoration: none;
-    margin-right: -148px;
 }
 
 .logo__title{
@@ -75,6 +75,41 @@ header{
 .header__button:hover{
     cursor: pointer;
     background-color: #f2f2f2;
+}
+
+.header__registration{
+    display: flex;
+}
+
+.sign_in_btn{
+    font-size: 14px;
+    font-weight: 400;
+    padding: 11px 12px;
+    border: 0px solid;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.sign_in_btn:hover{
+    cursor: pointer;
+    background-color: #f2f2f2;
+}
+
+.sign_up_btn{
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    padding: 11px 12px;
+    border: 0px solid;
+    border-radius: 10px;
+    background-color: #3C83F6;
+    margin-left: 8px;
+    text-decoration: none;
+}
+
+.sign_up_btn:hover{
+    cursor: pointer;
+    background-color: #4a8cf7;
 }
 
 /*--------------------------main------------------------------------------*/
@@ -123,6 +158,22 @@ header{
     font-weight: 400;
     font-size: 20px;
     color: #6C7993;
+    margin-bottom: 20px;
+}
+
+.top_section__btn{
+    width: 200px;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 12px 0px;
+    border: 0px;
+    border-radius: 10px;
+    background-color: #3C83F6;
+    color: #fff;
+}
+
+.top_section__btn:hover{
+    cursor: pointer;
 }
 
 .top_section__img {
@@ -184,12 +235,21 @@ header{
     margin-bottom: 5px;
 }
 
-.data__characteristic {
+table{
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 10px;
+}
+
+.table__header {
     font-weight: 700;
     font-size: 22px;
 }
 
-.data__value {
+.table__value {
     font-weight: 400;
     font-size: 22px;
     color: #6C7993;
