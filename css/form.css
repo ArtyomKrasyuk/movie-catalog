@@ -114,6 +114,13 @@ header{
 
 /*--------------------------main------------------------------------------*/
 
+.hint{
+    color: #79879A;
+    font-weight: 400;
+    font-size: 12px;
+    margin-bottom: 14px;
+}
+
 .title{
     font-weight: 700;
     font-size: 36px;
@@ -156,7 +163,7 @@ form{
     width: 100%;
     border: 1px solid #E1E5EA;
     border-radius: 10px;
-    margin-bottom: 11px;
+    margin-bottom: 2px;
 }
 
 .number{

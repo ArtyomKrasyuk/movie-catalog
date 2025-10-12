@@ -31,13 +31,17 @@
             <div class="form__container">
                 <div class="container__element">
                     <p class="form__label">Название фильма</p>
-                    <input type="text" class="form__input" placeholder="Введите название"/>
+                    <input type="text" class="form__input" placeholder="Введите название" id="title"/>
+                    <p class="hint">Название фильма не должно быть пустым</p>
                     <p class="form__label">Краткое описание</p>
                     <textarea name="desc" id="desc" class="form__input" placeholder="Введите краткое описание"></textarea>
+                    <p class="hint">Описание фильма должно содержать не менее 100 символов</p>
                     <p class="form__label">Сюжет фильма</p>
                     <textarea name="plot" id="plot" class="form__input" placeholder="Введите сюжет"></textarea>
+                    <p class="hint">Сюжет фильма должен содержать не менее 200 символов</p>
                     <p class="form__label">Ссылка на постер</p>
-                    <input type="text" class="form__input" placeholder="Введите ссылку"/>
+                    <input type="text" class="form__input" placeholder="Введите ссылку" id="link"/>
+                    <p class="hint">Ссылка должна начинаться с https:// или http://</p>
                 </div>
                 <div class="container__element">
                     <p class="form__label">Жанры</p>
@@ -74,18 +78,22 @@
                         <option value="Великобритания">Великобритания</option>
                     </select>
                     <p class="form__label">Длительность</p>
-                    <input type="number" class="form__input number" placeholder="Минуты" min="1"/>
+                    <input type="number" class="form__input number" placeholder="Минуты" id="duration" step="any"/>
+                    <p class="hint">Длительность фильма должна быть целым числом от 1 до 2880</p>
                     <p class="form__label">Кинокомпания</p>
-                    <input type="text" class="form__input" placeholder="Введите кинокомпанию"/>
+                    <input type="text" class="form__input" placeholder="Введите кинокомпанию" id="company"/>
+                    <p class="hint">Название кинокомпании должно содержать только кириллические или латинские буквы</p>
                     <p class="form__label">Рейтинг</p>
-                    <input type="number" class="form__input number" placeholder="Рейтинг" min="1" max="10"/>
+                    <input type="number" class="form__input number" placeholder="Рейтинг" id="rating" step="any"/>
+                    <p class="hint">Рейтинг должен быть от 1 до 10</p>
                 </div>
             </div>
-            <button class="form__btn">Добавить фильм</button>
+            <button class="form__btn" id="btn">Добавить фильм</button>
         </form>
     </main>
     <footer>
         <p class="footer__text">Выполнил Красюк Артём Максимович 6403-020302D</p>
     </footer>
+    <script src="js/form.js"></script>
 </body>
 </html>

@@ -124,6 +124,8 @@ header{
 .movie-img{
     display: block;
     margin: 0px auto 16px auto;
+    width: 57px;
+    height: 57px;
 }
 
 .title{
