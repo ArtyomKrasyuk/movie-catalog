@@ -205,6 +205,10 @@ header{
     object-fit: cover;
 }
 
+.movie__img:hover{
+    cursor: pointer;
+}
+
 .movie__description {
     margin-left: 10px;
 }
@@ -292,3 +296,31 @@ footer{
     font-weight: 400;
     padding-top: 22px;
 }
+
+
+/*--------------------------overlay----------------------------------------*/
+
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.image-overlay img {
+  max-width: 400px;
+  width: 100%;
+  max-height: 600px;
+  height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  cursor: zoom-out;
+  object-fit: cover;
+}
+

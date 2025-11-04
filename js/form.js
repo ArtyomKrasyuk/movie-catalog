@@ -22,6 +22,8 @@ let company = document.getElementById('company');
 let rating = document.getElementById('rating');
 // Массив ошибок
 let errors = [];
+// Актёры
+let actors = ["Тимоти Шаламе", "Зендея", "Ребекка Фергюсон", "Хавьер Бардем", "Джош Бролин"];
 
 btn.onclick = function(e){
     // Проверка присутствия названия фильма
@@ -37,6 +39,8 @@ btn.onclick = function(e){
     let numberOfGenres = 0;
     genres.forEach(genre => {if(genre.checked) numberOfGenres++;});
     if(numberOfGenres == 0 || numberOfGenres > 5) errors.push("Количество жанров фильма должно быть от 1 до 5");
+    // Проверка выбранных актёров
+    if(actors.length == 0) errors.push("Выберите актёров фильма");
     // Проверка страны выпуска
     if(country.value == '') errors.push("Выберите страну выпуска");
     // Проверка ввода продолжительности фильма
