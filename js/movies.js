@@ -16,7 +16,6 @@ function displayImage(elem){
     }
 }
 
-// --- Инициализация ---
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.querySelector('.searchline__input');
     const searchButton = document.querySelector('.searchline__btn');
@@ -28,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const movieContainer = document.querySelector('.movie_section__movies');
     const paginationContainer = document.querySelector('.movie_section__pages');
 
-    // --- Исходные данные фильмов ---
+    //Исходные данные фильмов 
     const movies = [
         {
             title: 'Дюна: часть вторая',
@@ -66,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
             img: 'img/vokzal.jpg',
             link: 'no_page.html'
         },
-        // Пример для демонстрации пагинации
         { title: 'Матрица', genres: ['Фантастика', 'Боевик'], year: 1999, country: 'США', rating: 8.7, img: 'img/Matrix-DVD.jpg', link: 'no_page.html' },
         { title: 'Интерстеллар', genres: ['Фантастика', 'Драма'], year: 2014, country: 'США', rating: 8.6, img: 'img/Interstellar_2014.jpg', link: 'no_page.html' },
         { title: 'Форрест Гамп', genres: ['Драма', 'Комедия'], year: 1994, country: 'США', rating: 9.5, img: 'img/forest.webp', link: 'no_page.html' },
@@ -76,11 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
         { title: 'Брат 2', genres: ['Драма', 'Криминал'], year: 2000, country: 'Россия', rating: 8.2, img: 'img/Brat2.jpg', link: 'no_page.html' },
     ];
 
-    // --- Настройки пагинации ---
+    // Настройки пагинации
     const MOVIES_PER_PAGE = 4;
     let currentPage = 1;
 
-    // --- Основные функции ---
     function filterMovies() {
         const searchText = searchInput.value.toLowerCase();
         const selectedYear = yearSelect.value;
@@ -146,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-     // --- обновленная функция пагинации ---
+     // функция пагинации
     function renderPagination(totalMovies) {
         paginationContainer.innerHTML = '';
         const totalPages = Math.ceil(totalMovies / MOVIES_PER_PAGE);
@@ -167,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const maxVisible = 2; // сколько страниц по бокам от текущей
 
         for (let i = 1; i <= totalPages; i++) {
-            // показываем всегда первую, последнюю, текущую и соседние
+            // отображение первой, последней, текущей и соседних страниц
             if (
                 i === 1 ||
                 i === totalPages ||
@@ -186,7 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 i === currentPage - maxVisible - 1 ||
                 i === currentPage + maxVisible + 1
             ) {
-                // вставляем троеточие
                 const ellipsis = document.createElement('span');
                 ellipsis.textContent = '...';
                 ellipsis.classList.add('ellipsis');
@@ -207,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
         paginationContainer.appendChild(next);
     }
 
-    // --- Обновление интерфейса ---
+    // Обновление интерфейса 
     function updateMovies() {
         const filtered = sortMovies(filterMovies());
         renderMovies(filtered);
@@ -218,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- События ---
+    // События
     searchButton.addEventListener('click', () => {
         currentPage = 1;
         updateMovies();
@@ -238,10 +234,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- Сброс одной сортировки при выборе другой ---
+    // Сброс одной сортировки при выборе другой
     ratingSelect.addEventListener('change', () => {
         if (ratingSelect.value) {
-            newnessSelect.value = ''; // сбрасываем сортировку по новизне
+            newnessSelect.value = ''; 
         }
         currentPage = 1;
         updateMovies();
@@ -249,12 +245,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     newnessSelect.addEventListener('change', () => {
         if (newnessSelect.value) {
-            ratingSelect.value = ''; // сбрасываем сортировку по рейтингу
+            ratingSelect.value = '';
         }
         currentPage = 1;
         updateMovies();
     });
 
-    // --- Первый рендер ---
     updateMovies();
 });

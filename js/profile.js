@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const moviesContainer = document.querySelector('.movie_section__movies');
     const paginationContainer = document.querySelector('.movie_section__pages');
 
-    // --- Пример данных фильмов (можно заменить на реальные) ---
+    // Пример данных фильмов
     const favoriteMovies = [
         { title: 'Матрица', genres: ['Фантастика', 'Боевик'], year: 1999, country: 'США', rating: 8.7, img: 'img/Matrix-DVD.jpg', link: 'no_page.html' },
         { title: 'Интерстеллар', genres: ['Фантастика', 'Драма'], year: 2014, country: 'США', rating: 8.6, img: 'img/Interstellar_2014.jpg', link: 'no_page.html' },
@@ -26,13 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const MOVIES_PER_PAGE = 4;
     let currentPage = 1;
 
-    // --- Рендер фильмов ---
+    // Рендер фильмов
     function renderMovies(moviesList) {
         const start = (currentPage - 1) * MOVIES_PER_PAGE;
         const end = start + MOVIES_PER_PAGE;
         const visibleMovies = moviesList.slice(start, end);
 
-        moviesContainer.innerHTML = ''; // очистка
+        moviesContainer.innerHTML = ''; 
 
         visibleMovies.forEach(movie => {
             const div = document.createElement('div');
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Пагинация с троеточием ---
+    // Пагинация
     function renderPagination(totalItems) {
         paginationContainer.innerHTML = '';
         const totalPages = Math.ceil(totalItems / MOVIES_PER_PAGE);
@@ -111,12 +111,10 @@ document.addEventListener('DOMContentLoaded', () => {
         paginationContainer.appendChild(next);
     }
 
-    // --- Основная функция обновления ---
     function updateMovies() {
         renderMovies(favoriteMovies);
         renderPagination(favoriteMovies.length);
     }
 
-    // --- Первичная отрисовка ---
     updateMovies();
 });

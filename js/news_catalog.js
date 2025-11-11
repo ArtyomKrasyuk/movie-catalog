@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const newsContainer = document.querySelector('.news_section');
     const paginationContainer = document.querySelector('.movie_section__pages');
 
-    // --- Массив новостей ---
+    // Массив новостей 
     const news = [
         {
             title: '10 вопросов звезде. Роман Маякин — о «Виноделах», любимых сериалах и лучших актерах',
@@ -40,25 +40,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const NEWS_PER_PAGE = 3;
     let currentPage = 1;
 
-    // --- Сортировка ---
+    // Сортировка
     function sortNews(newsList) {
         const sortOrder = sortSelect.value;
         return newsList.sort((a, b) => {
             if (sortOrder === 'new') {
-                return new Date(b.date) - new Date(a.date); // Сначала новые
+                return new Date(b.date) - new Date(a.date); 
             } else {
-                return new Date(a.date) - new Date(b.date); // Сначала старые
+                return new Date(a.date) - new Date(b.date); 
             }
         });
     }
 
-    // --- Рендер карточек новостей ---
+    // Рендер карточек новостей 
     function renderNews(newsList) {
         const start = (currentPage - 1) * NEWS_PER_PAGE;
         const end = start + NEWS_PER_PAGE;
         const visibleNews = newsList.slice(start, end);
 
-        // Удаляем старые карточки (кроме пагинации)
         const oldCards = newsContainer.querySelectorAll('.news_section__card');
         oldCards.forEach(c => c.remove());
 
@@ -88,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Пагинация с троеточиями ---
+    // Пагинация
     function renderPagination(totalItems) {
         paginationContainer.innerHTML = '';
         const totalPages = Math.ceil(totalItems / NEWS_PER_PAGE);
@@ -146,19 +145,16 @@ document.addEventListener('DOMContentLoaded', () => {
         paginationContainer.appendChild(next);
     }
 
-    // --- Основное обновление ---
     function updateNews() {
         const sorted = sortNews([...news]);
         renderNews(sorted);
         renderPagination(sorted.length);
     }
 
-    // --- События ---
     sortSelect.addEventListener('change', () => {
         currentPage = 1;
         updateNews();
     });
 
-    // --- Первичный рендер ---
     updateNews();
 });
