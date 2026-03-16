@@ -19,10 +19,6 @@
                 <a href="news_catalog.html" class="header__button">Новости</a>
                 <a href="about_us.html" class="header__button">О сайте</a>
             </nav>
-            <div class="header__registration">
-                <a href="sign_in.html" class="sign_in_btn">Войти</a>
-                <a href="sign_up.html" class="sign_up_btn">Регистрация</a>
-            </div>
         </div>
     </header>
     <main>
@@ -34,16 +30,17 @@
                 <p class="form__title">Создать аккаунт</p>
                 <p class="form__subtitle">Заполните данные для создания нового аккаунта</p>
                 <p class="input_title">Имя</p>
-                <input type="text" class="input" placeholder="Ваше имя" />
+                <input type="text" class="input" placeholder="Ваше имя" id="name"/>
                 <p class="input_title">Email</p>
-                <input type="text" class="input" placeholder="example@mail.com" />
+                <input type="text" class="input" placeholder="example@mail.com" id="email"/>
                 <p class="input_title">Пароль</p>
-                <input type="password" class="input password" placeholder="Создайте пароль" />
-                <img src="img/eye.png" alt="" class="eye">
+                <input type="password" class="input password" placeholder="Создайте пароль" id="first_password"/>
+                <img src="img/eye.png" alt="" class="eye" id="eye1">
                 <p class="input_title">Подтверждение пароля</p>
-                <input type="password" class="input password" placeholder="Повторите пароль" />
-                <img src="img/eye.png" alt="" class="eye">
+                <input type="password" class="input password" placeholder="Повторите пароль" id="second_password"/>
+                <img src="img/eye.png" alt="" class="eye" id="eye2">
                 <button class="form__btn">Зарегистрироваться</button>
+                <p class="form__text error" style="display: none;">Сообщение об ошибке</p>
                 <p class="form__text">Уже есть аккаунт? <a href="sign_in.html" class="text__link">Войти</a></p>
             </div>
         </div>
@@ -51,5 +48,6 @@
     <footer>
         <p class="footer__text">Выполнил Красюк Артём Максимович 6403-020302D</p>
     </footer>
+    <script src="js/sign_up.js"></script>
 </body>
 </html>

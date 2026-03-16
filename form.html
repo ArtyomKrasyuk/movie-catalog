@@ -23,6 +23,7 @@
                 <a href="sign_in.html" class="sign_in_btn">Войти</a>
                 <a href="sign_up.html" class="sign_up_btn">Регистрация</a>
             </div>
+            <div class="profile" style="display: none;">Личный кабинет</div>
         </div>
     </header>
     <main>
@@ -35,60 +36,42 @@
                     <p class="hint">Название фильма не должно быть пустым</p>
                     <p class="form__label">Краткое описание</p>
                     <textarea name="desc" id="desc" class="form__input" placeholder="Введите краткое описание"></textarea>
-                    <p class="hint">Описание фильма должно содержать не менее 100 символов</p>
+                    <p class="hint">Описание фильма должно содержать не менее 10 символов</p>
                     <p class="form__label">Сюжет фильма</p>
                     <textarea name="plot" id="plot" class="form__input" placeholder="Введите сюжет"></textarea>
-                    <p class="hint">Сюжет фильма должен содержать не менее 200 символов</p>
+                    <p class="hint">Сюжет фильма должен содержать не менее 20 символов</p>
                     <p class="form__label">Ссылка на постер</p>
                     <input type="text" class="form__input" placeholder="Введите ссылку" id="link"/>
                     <p class="hint">Ссылка должна начинаться с https:// или http://</p>
+                    <p class="form__label">Год выпуска</p>
+                    <input type="number" class="form__input number" placeholder="2000" id="year" step="any"/>
                 </div>
                 <div class="container__element">
                     <p class="form__label">Жанры</p>
-                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Боевик"/>Боевик</label>
-                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Драма"/>Драма</label>
-                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Комедия"/>Комедия</label>
-                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Триллер"/>Триллер</label>
-                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Криминал"/>Криминал</label>
-                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Ужасы</label>
-                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Приключения</label>
-                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Фэнтези</label>
-                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Фантастика</label>
-                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Документальный</label>
-                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Исторический</label>
-                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Спорт</label>
-                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Детектив</label>
-                    <label class="checkbox_label"><input type="checkbox" name="genre" class="checkbox" value="Ужасы"/>Музыкальный</label>
+                    <div class="genre__container">
+                    </div>
                     <p class="form__label">Актёры</p>
-                    <input type="text" class="form__input" placeholder="Введите имя актёра"/>
-                    <p class="form__actors">
-                        <span class="actors__actor">Тимоти Шаламе</span>
-                        <span class="actors__actor">Зендея</span>
-                        <span class="actors__actor">Ребекка Фергюсон</span>
-                        <span class="actors__actor">Хавьер Бардем</span>
-                        <span class="actors__actor">Джош Бролин</span>
+                    <input type="text" class="form__input" id="actorInput" placeholder="Введите имя актёра"/>
+                    <div id="actorSuggestions" class="actors__suggestions"></div>
+                    <p class="form__actors" id="selectedActors">
                     </p>
                     <p class="form__label">Страна выпуска</p>
                     <select name="country" id="country" class="form__input">
                         <option value="" selected disabled>Выберите страну</option>
-                        <option value="Россия">Россия</option>
-                        <option value="СССР">СССР</option>
-                        <option value="США">США</option>
-                        <option value="Франция">Франция</option>
-                        <option value="Великобритания">Великобритания</option>
                     </select>
                     <p class="form__label">Длительность</p>
                     <input type="number" class="form__input number" placeholder="Минуты" id="duration" step="any"/>
                     <p class="hint">Длительность фильма должна быть целым числом от 1 до 2880</p>
-                    <p class="form__label">Кинокомпания</p>
-                    <input type="text" class="form__input" placeholder="Введите кинокомпанию" id="company"/>
-                    <p class="hint">Название кинокомпании должно содержать только кириллические или латинские буквы</p>
+                    <select name="company" id="company" class="form__input">
+                        <option value="" selected disabled>Выберите кинокомпанию</option>
+                    </select>
                     <p class="form__label">Рейтинг</p>
                     <input type="number" class="form__input number" placeholder="Рейтинг" id="rating" step="any"/>
                     <p class="hint">Рейтинг должен быть от 1 до 10</p>
                 </div>
             </div>
-            <button class="form__btn" id="btn">Добавить фильм</button>
+            <div class="form__btn" id="btn">Добавить фильм</div>
+            <p class="form__label error" style="display: none;">Текст ошибки</p>
         </form>
     </main>
     <footer>

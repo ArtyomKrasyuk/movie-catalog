@@ -19,10 +19,6 @@
                 <a href="news_catalog.html" class="header__button">Новости</a>
                 <a href="about_us.html" class="header__button">О сайте</a>
             </nav>
-            <div class="header__registration">
-                <a href="sign_in.html" class="sign_in_btn">Войти</a>
-                <a href="sign_up.html" class="sign_up_btn">Регистрация</a>
-            </div>
         </div>
     </header>
     <main>
@@ -34,11 +30,12 @@
                 <p class="form__title">Авторизация</p>
                 <p class="form__subtitle">Введите свои данные для входа в систему</p>
                 <div class="input_title">Email</div>
-                <input type="text" class="input" placeholder="example@mail.com" />
+                <input type="text" class="input" placeholder="example@mail.com" id="email"/>
                 <p class="input_title">Пароль</p>
-                <input type="password" class="input password" placeholder="Введите пароль" />
+                <input type="password" class="input password" placeholder="Введите пароль" id="password"/>
                 <img src="img/eye.png" alt="" class="eye">
                 <button class="form__btn">Войти</button>
+                <p class="form__text error" style="display: none;">Сообщение об ошибке</p>
                 <p class="form__text">Нет аккаунта? <a href="sign_up.html" class="text__link">Зарегистрироваться</a></p>
             </div>
         </div>
@@ -46,5 +43,6 @@
     <footer>
         <p class="footer__text">Выполнил Красюк Артём Максимович 6403-020302D</p>
     </footer>
+    <script src="js/sign_in.js"></script>
 </body>
 </html>

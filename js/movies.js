@@ -1,6 +1,9 @@
 'use strict'
 
-function displayImage(elem){
+let host = 'localhost';
+let port = 5047;
+
+/*function displayImage(elem){
     const overlay = document.createElement("div");
     overlay.classList.add("image-overlay");
 
@@ -252,4 +255,264 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     updateMovies();
+});*/
+
+document.querySelector('.profile').onclick = function(e){
+    window.location.href = 'profile.html';
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("genre");
+
+    fetch(`http://${host}:${port}/api/movies/genres`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Ошибка загрузки жанров");
+            }
+            return response.json();
+        })
+        .then(genres => {
+            genres.forEach(genre => {
+                let str = `<option value="${genre.title}" data-id="${genre.genreId}">${genre.title}</option>`;
+                container.insertAdjacentHTML('beforeend', str);
+            });
+        })
+        .catch(error => {
+            console.log(error);;
+        });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const select = document.getElementById("country");
+
+    fetch(`http://${host}:${port}/api/movies/countries`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Ошибка загрузки стран");
+            }
+            return response.json();
+        })
+        .then(countries => {
+            countries.forEach(country => {
+                let str = `<option value="${country.title}" data-id="${country.countryId}">${country.title}</option>`;
+                select.insertAdjacentHTML('beforeend', str);
+            });
+        })
+        .catch(error => {
+            console.log(error);
+        });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const select = document.getElementById("years");
+
+    fetch(`http://${host}:${port}/api/movies/years`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Ошибка загрузки годов выпуска");
+            }
+            return response.json();
+        })
+        .then(years => {
+            years.forEach(year => {
+                let str = `<option value="${year}">${year}</option>`;
+                select.insertAdjacentHTML('beforeend', str);
+            });
+        })
+        .catch(error => {
+            console.log(error);
+        });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const moviesContainer = document.querySelector(".movie_section__movies");
+    const pagesContainer = document.querySelector(".movie_section__pages");
+
+    const yearSelect = document.getElementById("years");
+    const countrySelect = document.getElementById("country");
+    const genreSelect = document.getElementById("genre");
+    const ratingSelect = document.getElementById("rating");
+    const newnessSelect = document.getElementById("newness");
+
+    let currentPage = 1;
+    let movies = [];
+    let totalPages = 1;
+
+    loadMovies();
+
+    yearSelect.onchange = resetAndLoad;
+    countrySelect.onchange = resetAndLoad;
+    genreSelect.onchange = resetAndLoad;
+
+    ratingSelect.onchange = applySorting;
+    newnessSelect.onchange = applySorting;
+
+    function resetAndLoad(){
+        currentPage = 1;
+        loadMovies();
+    }
+
+    async function loadMovies(){
+
+        const year = yearSelect.value;
+
+        const countryId =
+            countrySelect.selectedOptions[0]?.dataset?.id || "";
+
+        const genreId =
+            genreSelect.selectedOptions[0]?.dataset?.id || "";
+
+        const params = new URLSearchParams();
+
+        if(year) params.append("year", year);
+        if(countryId) params.append("countryId", countryId);
+        if(genreId) params.append("genreId", genreId);
+
+        params.append("page", currentPage);
+
+        const response = await fetch(`http://${host}:${port}/api/movies?${params}`);
+
+        if(!response.ok){
+            console.error("Ошибка загрузки фильмов");
+            return;
+        }
+
+        const data = await response.json();
+
+        movies = data.movies;
+        totalPages = data.totalPages;
+
+        applySorting();
+        renderPages();
+    }
+
+    function applySorting(){
+
+        let sorted = [...movies];
+
+        const ratingSort = ratingSelect.value;
+        const newnessSort = newnessSelect.value;
+
+        if(ratingSort === "ascending"){
+            sorted.sort((a,b) => a.rating - b.rating);
+        }
+
+        if(ratingSort === "descending"){
+            sorted.sort((a,b) => b.rating - a.rating);
+        }
+
+        if(newnessSort === "ascending"){
+            sorted.sort((a,b) => b.year - a.year);
+        }
+
+        if(newnessSort === "descending"){
+            sorted.sort((a,b) => a.year - b.year);
+        }
+
+        renderMovies(sorted);
+    }
+
+    function renderMovies(list){
+
+        moviesContainer.innerHTML = "";
+
+        list.forEach(movie => {
+
+            const genres = movie.genres.join(", ");
+            const poster = movie.poster || "img/movie_img.png";
+
+            const html = `
+            <div class="movie_section__movie">
+
+                <img src="${poster}" class="movie__img"/>
+
+                <div class="movie__description">
+
+                    <h2 class="movie__title">
+                        <a href="movie.html?id=${movie.movieId}">
+                            ${movie.title}
+                        </a>
+                    </h2>
+
+                    <p class="movie__genres">${genres}</p>
+
+                    <div class="movie__rating">
+                        <img src="img/star.png" class="rating__img"/>
+                        <p class="rating__number">${movie.rating}</p>
+                    </div>
+
+                </div>
+
+            </div>
+            `;
+
+            moviesContainer.insertAdjacentHTML("beforeend", html);
+        });
+    }
+
+    function renderPages(){
+
+        pagesContainer.innerHTML = "";
+
+        if(totalPages <= 1) return;
+
+        if(currentPage > 1){
+            pagesContainer.appendChild(createPage("<", currentPage - 1));
+        }
+
+        for(let i = 1; i <= totalPages; i++){
+
+            const page = createPage(i, i);
+
+            if(i === currentPage){
+                page.classList.add("active");
+            }
+
+            pagesContainer.appendChild(page);
+        }
+
+        if(currentPage < totalPages){
+            pagesContainer.appendChild(createPage(">", currentPage + 1));
+        }
+    }
+
+    function createPage(text, page){
+
+        const span = document.createElement("span");
+
+        span.className = "pages__page";
+        span.textContent = text;
+
+        span.onclick = () => {
+
+            currentPage = page;
+
+            loadMovies();
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        };
+
+        return span;
+    }
+
+});
+
+async function checkAuth() {
+    const response = await fetch(`http://${host}:${port}/api/movies/session`, {
+        method: "GET",
+        headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+        },
+        credentials: 'include'
+    });
+    if(response.ok){
+        document.querySelector('.header__registration').style.display = 'none';
+        document.querySelector('.profile').style.display = 'block';
+    }
+}
+
+checkAuth();

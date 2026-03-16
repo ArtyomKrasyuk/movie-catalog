@@ -24,6 +24,7 @@
                 <a href="sign_in.html" class="sign_in_btn">Войти</a>
                 <a href="sign_up.html" class="sign_up_btn">Регистрация</a>
             </div>
+            <div class="profile" style="display: none;">Личный кабинет</div>
         </div>
     </header>
     <main>
@@ -42,14 +43,14 @@
                     <div class="profile_card__data_container">
                         <img src="img/mini_profile.png" alt="Профиль" width="16" height="16"/>
                         <p class="profile_card__param">Имя:</p>
-                        <p class="profile_card__value">Артём</p>
+                        <p class="profile_card__value" id="name">Артём</p>
                     </div>
                     <div class="profile_card__data_container">
                         <img src="img/email.png" alt="Email" width="16" height="16"/>
                         <p class="profile_card__param">Email:</p>
-                        <p class="profile_card__value">artem@mail.com</p>
+                        <p class="profile_card__value" id="email">artem@mail.com</p>
                     </div>
-                    <button class="profile_card__btn">Редактировать профиль</button>
+                    <button class="profile_card__btn" style="display: none;">Редактировать профиль</button>
                 </div>
                 <form class="profile_card__changes hidden">
                     <div class="changes__container">
@@ -77,13 +78,14 @@
                             <input type="password" class="input_container__input" />
                         </div>
                     </div>
-                    <button class="changes__submit">Сохранить изменения</button>
-                    <button class="changes__cancel">Отмена</button>
+                    <div class="changes__submit">Сохранить изменения</div>
+                    <div class="changes__cancel">Отмена</div>
                 </form>
             </div>
             <h2 class="movies__title">Избранное</h2>
             <div class="movie_section">
                 <div class="movie_section__movies">
+                    <!--
                     <div class="movie_section__movie">
                         <img src="img/movie_img.png" alt="Постер" class="movie__img"/>
                         <div class="movie__description">
@@ -96,52 +98,8 @@
                             <button class="movie__btn">Убрать из избранного</button>
                         </div>
                     </div>
-                    <div class="movie_section__movie">
-                        <img src="img/movie_img.png" alt="Постер" class="movie__img"/>
-                        <div class="movie__description">
-                            <h2 class="movie__title"><a href="movie.html">Дюна: часть вторая</a></h2>
-                            <p class="movie__genres">Фантастика, Боевик, Драма, Приключения</p>
-                            <div class="movie__rating">
-                                <img src="img/star.png" alt="Рейтинг" class="rating__img" />
-                                <p class="rating__number">8.2</p>
-                            </div>
-                            <button class="movie__btn">Убрать из избранного</button>
-                        </div>
-                    </div>
-                    <div class="movie_section__movie">
-                        <img src="img/movie_img.png" alt="Постер" class="movie__img"/>
-                        <div class="movie__description">
-                            <h2 class="movie__title"><a href="movie.html">Дюна: часть вторая</a></h2>
-                            <p class="movie__genres">Фантастика, Боевик, Драма, Приключения</p>
-                            <div class="movie__rating">
-                                <img src="img/star.png" alt="Рейтинг" class="rating__img" />
-                                <p class="rating__number">8.2</p>
-                            </div>
-                            <button class="movie__btn">Убрать из избранного</button>
-                        </div>
-                    </div>
-                    <div class="movie_section__movie">
-                        <img src="img/movie_img.png" alt="Постер" class="movie__img"/>
-                        <div class="movie__description">
-                            <h2 class="movie__title"><a href="movie.html">Дюна: часть вторая</a></h2>
-                            <p class="movie__genres">Фантастика, Боевик, Драма, Приключения</p>
-                            <div class="movie__rating">
-                                <img src="img/star.png" alt="Рейтинг" class="rating__img" />
-                                <p class="rating__number">8.2</p>
-                            </div>
-                            <button class="movie__btn">Убрать из избранного</button>
-                        </div>
-                    </div>
+                    -->
                 </div>
-                <p class="movie_section__pages">
-                    <span class="pages__page disabled">&lt;</span>
-                    <span class="pages__page">&gt;</span>
-                    <span class="pages__page active">1</span>
-                    <span class="pages__page">2</span>
-                    <span class="pages__page">3</span>
-                    <span class="ellipsis">...</span>
-                    <span class="pages__page">10</span>
-                </p>
             </div>
         </div>
     </main>

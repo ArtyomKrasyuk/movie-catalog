@@ -23,6 +23,7 @@
                 <a href="sign_in.html" class="sign_in_btn">Войти</a>
                 <a href="sign_up.html" class="sign_up_btn">Регистрация</a>
             </div>
+            <div class="profile" style="display: none;">Личный кабинет</div>
         </div>
     </header>
     <main>
@@ -72,19 +73,19 @@
                     <tbody>
                         <tr>
                             <td><span class="table__value">Страна выпуска</span></td>
-                            <td><span class="table__value">США</span></td>
+                            <td><span class="table__value" id="country">США</span></td>
                         </tr>
                         <tr>
                             <td><span class="table__value">Длительность</span></td>
-                            <td><span class="table__value">166 минут</span></td>
+                            <td><span class="table__value" id="duration">166 минут</span></td>
                         </tr>
                         <tr>
                             <td><span class="table__value">Кинокомпания</span></td>
-                            <td><span class="table__value">Legendary Pictures</span></td>
+                            <td><span class="table__value" id="company">Legendary Pictures</span></td>
                         </tr>
                         <tr>
                             <td><span class="table__value">Рейтинг</span></td>
-                            <td><span class="table__value">8.2</span></td>
+                            <td><span class="table__value" id="rating">8.2</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -94,6 +95,7 @@
     <footer>
         <p class="footer__text">Выполнил Красюк Артём Максимович 6403-020302D</p>
     </footer>
+    <script src="js/movie.js"></script>
 </body>
 </html>
 
