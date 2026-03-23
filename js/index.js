@@ -1,6 +1,6 @@
 'use strict'
 
-let host = 'localhost';
+let host = '155.212.145.130';
 let port = '5047';
 
 async function checkAuth() {
@@ -20,5 +20,5 @@ async function checkAuth() {
 checkAuth();
 
 document.querySelector('.profile').onclick = function(e){
-    window.location.href = 'profile.html';
+    window.location.href = '/profile';
 }

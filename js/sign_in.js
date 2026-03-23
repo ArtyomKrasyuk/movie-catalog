@@ -16,7 +16,7 @@ document.querySelector('.form__btn').onclick = async function(e){
         'password': password
     }
 
-    const response = await fetch(`http://localhost:${port}/api/movies/login`, {
+    const response = await fetch(`http://155.212.145.130:${port}/api/movies/login`, {
         method: "POST",
         headers: {
         'Content-Type': 'application/json;charset=utf-8'
@@ -26,7 +26,7 @@ document.querySelector('.form__btn').onclick = async function(e){
     });
 
     if (response.ok) {
-        window.location.href = 'index.html';
+        window.location.href = '/index';
     }
     else{
         document.querySelector('.error').innerHTML = await response.text();

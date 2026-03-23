@@ -1,6 +1,6 @@
 'use strict'
 
-let host = 'localhost';
+let host = '155.212.145.130';
 let port = 5047;
 
 /*function displayImage(elem){
@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });*/
 
 document.querySelector('.profile').onclick = function(e){
-    window.location.href = 'profile.html';
+    window.location.href = '/profile';
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -430,7 +430,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="movie__description">
 
                     <h2 class="movie__title">
-                        <a href="movie.html?id=${movie.movieId}">
+                        <a href="/movie?id=${movie.movieId}">
                             ${movie.title}
                         </a>
                     </h2>

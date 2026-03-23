@@ -27,7 +27,7 @@ let actors = [];
 const selectedActorIds = new Set();
 
 let port = 5047;
-let host = 'localhost';
+let host = '155.212.145.130';
 
 const input = document.getElementById("actorInput");
 const suggestions = document.getElementById("actorSuggestions");
@@ -295,5 +295,5 @@ async function checkAuth() {
 checkAuth();
 
 document.querySelector('.profile').onclick = function(e){
-    window.location.href = 'profile.html';
+    window.location.href = '/profile';
 }

@@ -1,6 +1,6 @@
 'use strict'
 
-let host = 'localhost';
+let host = '155.212.145.130';
 let port = '5047';
 
 async function checkAuth() {
@@ -20,7 +20,7 @@ async function checkAuth() {
 checkAuth();
 
 document.querySelector('.profile').onclick = function(e){
-    window.location.href = 'profile.html';
+    window.location.href = '/profile';
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -34,28 +34,28 @@ document.addEventListener('DOMContentLoaded', () => {
             title: '10 вопросов звезде. Роман Маякин — о «Виноделах», любимых сериалах и лучших актерах',
             subtitle: 'Актёр Роман Маякин рассказал о своей новой работе и будущем российского кино.',
             img: 'img/news.jpg',
-            link: 'news_page.html',
+            link: '/news_page',
             date: '2025-09-28T18:32:00'
         },
         {
             title: 'Дочь Робина Уильямса пожаловалась на ролики с актером, созданные ИИ',
             subtitle: 'Зельда Уильямс призвала поклонников не присылать ролики, созданные искусственным интеллектом.',
             img: 'img/robin.jpg',
-            link: 'no_page.html',
+            link: '/no_page',
             date: '2025-10-07T15:22:00'
         },
         {
             title: 'Брендан Фрейзер и Рэйчел Вайс вновь снимутся вместе в перезапуске «Мумии»',
             subtitle: 'Культовая приключенческая франшиза «Мумия» готовится к возрождению. 56-летний Брендан Фрейзер и 55-летняя Рэйчел Вайс ведут переговоры о возвращении к своим ролям.',
             img: 'img/mummy.webp',
-            link: 'no_page.html',
+            link: '/no_page',
             date: '2025-10-12T10:15:00'
         },
         {
             title: 'Вуди Харрельсон исключил возвращение к роли в «Настоящем детективе»',
             subtitle: 'Американский актер Вуди Харрельсон исключил возможность возвращения к роли в сериале «Настоящий детектив» вместе с Мэттью Макконахи. Об этом он заявил в интервью передаче Today телекомпании NBC.',
             img: 'img/actor.jpg',
-            link: 'no_page.html',
+            link: '/no_page',
             date: '2025-10-02T11:05:00'
         }
     ];

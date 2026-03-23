@@ -8,7 +8,7 @@ function toggle(){
 document.querySelector('.profile_card__btn').onclick = toggle;
 document.querySelector('.changes__cancel').onclick = toggle;
 
-let host = 'localhost';
+let host = '155.212.145.130';
 let port = '5047';
 
 async function getClientData() {
@@ -51,7 +51,7 @@ async function getFav() {
                 <div class="movie_section__movie">
                     <img src="${movie.poster}" alt="Постер" class="movie__img"/>
                     <div class="movie__description">
-                        <h2 class="movie__title"><a href="movie.html">${movie.title}</a></h2>
+                        <h2 class="movie__title"><a href="/movie?id=${movie.movieId}">${movie.title}</a></h2>
                         <p class="movie__genres">${movie.genres.join(', ')}</p>
                         <div class="movie__rating">
                             <img src="img/star.png" alt="Рейтинг" class="rating__img" />
